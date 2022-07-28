@@ -1,0 +1,111 @@
+.content {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+    mix-blend-mode: screen;
+  }
+  
+  #green, #teal, #blue {
+    animation-name: colorchange;
+    animation-duration: 550ms;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+  
+  
+  .bar {
+    animation-name: animateIn;
+    animation-delay: calc(var(--animation-order) * 200ms);
+    animation-duration: 1200ms;
+   
+    transition:cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  }
+  
+  .bar:nth-child(1) { 
+    animation-delay: 20ms;
+  }
+  
+  .bar:nth-child(2) { 
+    animation-delay: 50ms;
+  }
+  
+  .bar:nth-child(3) { 
+    animation-delay: 100ms;
+  }
+  
+  .bar:nth-child(4) { 
+    animation-delay: 200ms;
+  }
+  
+  .bar:nth-child(5) { 
+    animation-delay: 300ms;
+  }
+  
+  .bar:nth-child(6) { 
+    animation-delay: 400ms;
+  }
+  
+  .bar:nth-child(7) { 
+    animation-delay: 500ms;
+  }
+  
+  .bar:nth-child(8) { 
+    animation-delay: 600ms;
+  }
+  
+  .bar:nth-child(9) { 
+    animation-delay: 700ms;
+  }
+  
+  
+  .dots {
+    animation-name: animateDots;
+    animation-delay: calc(var(--animation-order) * 200ms);
+    animation-duration: 1100ms;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .dots:nth-child(1) { 
+    animation-delay: 20ms;
+  }
+  
+  .dots:nth-child(2) { 
+    animation-delay: 500ms;
+  }
+  
+  @keyframes colorchange {
+    0%   { transform: scale(.1) rotate(0deg);filter: blur(15px) saturate(30%); }
+    50%  { transform:  rotate(340deg) translate(-3px,-1px);filter: blur(2px) saturate(200%); }
+    100% { transform: scale(1) rotate(0deg) translate(1px,-1px); }
+  }
+  
+  @keyframes animateIn {
+    0% {
+      transform: scale(0.5) translateX(-100px) translateY(20px);
+      filter: blur(15px) saturate(200%) opacity(0);
+      }
+  
+      40%{
+        transform: scale(0.5) translateX(-60px) translateY(24px);
+        filter: blur(15px) saturate(200%) opacity(0.5);
+      }
+    
+    100% {
+      transform: scale(1) translateX(0px) translateY(0px);
+      filter: saturate(100%);
+    }
+  }
+  
+  @keyframes animateDots {
+    0%, 50%  { transform:  scale(1); filter: blur(15px) hue-rotate(90deg) brightness(0.4) opacity(0);  
+              }
+    100% { transform: scale(1) rotate(0deg) translateY(-1px) opacity(1); }
+  }
+  
+  

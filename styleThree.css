@@ -1,0 +1,51 @@
+#green, #teal, #blue {
+  animation-name: colorchange;
+  animation-duration: 550ms;
+  animation-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+#c, #u, #r, #i, #e, #a {
+  animation-name: animateIn;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  shape-rendering:geometricPrecision;
+  
+}
+
+#dotUno, #dotDuo {
+  animation-name: animateDots;
+  animation-delay: calc(var(--animation-order) * 200ms);
+  animation-duration: 1100ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes colorchange {
+  0%   { transform: scale(.1) rotate(0deg);filter: blur(15px) saturate(30%); }
+  50%  { transform:  rotate(340deg) translate(-3px,-1px);filter: blur(2px) saturate(200%); }
+  100% { transform: scale(1) rotate(0deg) translate(1px,-1px); }
+}
+
+@keyframes animateIn {
+  0% {
+    transform: scale(0.5) translateX(-100px) translateY(20px);
+    filter: blur(15px) saturate(200%) opacity(0);
+    }
+
+    40%{
+      transform: scale(0.5) translateX(-60px) translateY(24px);
+      filter: blur(15px) saturate(200%) opacity(0.5);
+    }
+  
+  100% {
+    transform: scale(1) translateX(0px) translateY(0px);
+    filter: saturate(100%);
+  }
+}
+
+@keyframes animateDots {
+  0%, 50%  { transform:  scale(1); filter: blur(15px) hue-rotate(90deg) brightness(0.4);  
+            }
+  100% { transform: scale(1) rotate(0deg) translateY(-1px); }
+}
